@@ -389,14 +389,13 @@ header nav ul li a:hover {
 }
 .loader {
   width: 100%;
-  margin: auto;
+  margin: auto auto 20px auto;
   max-width: 600px;
   background: #ef3635;
   text-align: center;
-  height: 50vh;
+  height: 40vh;
   -webkit-box-shadow: 0 2px 2px #aaa;
   box-shadow: 0 2px 2px #aaa;
-  display: none;
 }
 .loader img {
   width: 20%;
