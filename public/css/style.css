@@ -333,16 +333,21 @@ body {
   margin: 0;
   padding: 0;
   color: #ef3635;
-  background: #f9f9f9;
   font-family: 'Source Code Pro', monaco, monospace;
+  background: #f9f9f9;
 }
 header {
   max-width: 600px;
   width: 80%;
-  margin: 20px auto 20px auto;
+  margin: 20px auto 0 auto;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
+  overflow: hidden;
+}
+header .flag {
+  width: 50%;
+  margin: auto;
 }
 header h1 {
   max-width: 1024px;
@@ -361,6 +366,7 @@ header img {
 }
 header nav {
   width: 100%;
+  text-align: center;
   margin: 20px auto 20px auto;
 }
 header nav ul li {
@@ -369,6 +375,17 @@ header nav ul li {
 header nav ul li a {
   color: #ef3635;
   text-decoration: none;
+  padding: 0px 0px 2px 0px;
+  -webkit-transition: border 500ms ease;
+  -moz-transition: border 500ms ease;
+  -o-transition: border 500ms ease;
+  -ms-transition: border 500ms ease;
+  transition: border 500ms ease;
+  border-bottom: 1px solid #f9f9f9;
+}
+header nav ul li a.active,
+header nav ul li a:hover {
+  border-bottom: 1px solid #ef3635;
 }
 main {
   min-width: 260px;
@@ -394,7 +411,7 @@ main .center {
 }
 main .hunter {
   width: 32%;
-  margin: 10px 0 10px 0;
+  margin: 0 auto 10px auto;
   background: #fff;
   max-width: 300px;
   -webkit-box-shadow: 2px 2px 2px #aaa;
@@ -410,7 +427,7 @@ main .hunter {
 }
 main .hunter h2 {
   margin: 0 auto 10px auto;
-  font-size: 2em;
+  font-size: 1.2em;
 }
 main .hunter p {
   max-width: 510px;
@@ -418,7 +435,7 @@ main .hunter p {
   font-weight: 100;
   font-size: 0.9em;
   letter-spacing: 0.1em;
-  line-height: 1.2em;
+  line-height: 0.8em;
   -webkit-hyphens: auto;
   -moz-hyphens: auto;
   -ms-hyphens: auto;
@@ -442,8 +459,13 @@ main .hunter .content .position {
   -webkit-border-radius: 50%;
   border-radius: 50%;
   position: absolute;
-  top: 10px;
+  top: 50%;
   right: 10px;
+  -webkit-transform: translate(0%, -50%);
+  -moz-transform: translate(0%, -50%);
+  -o-transform: translate(0%, -50%);
+  -ms-transform: translate(0%, -50%);
+  transform: translate(0%, -50%);
   border: 2px solid #fff;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -454,11 +476,11 @@ main .hunter .content .position {
   line-height: 1.5em;
 }
 main .hunter .content .money {
-  font-size: 1.2em;
+  font-size: 0.8em;
 }
 main .winner {
   width: 100%;
-  height: 30vh;
+  height: 40vh;
   max-width: 600px;
   vertical-align: top;
   text-align: right;
@@ -481,6 +503,17 @@ main .winner .content {
   text-align: left;
   background: #ef3635;
 }
+main .winner .content h2 {
+  font-size: 2em;
+  width: 80%;
+  margin: auto auto 5% auto;
+}
+main .winner .content .cup {
+  width: 50%;
+  height: auto;
+  display: block;
+  margin: 10px auto 12% auto;
+}
 main .winner .content .position {
   top: 0;
   right: 0;
@@ -489,7 +522,9 @@ main .winner .content .position {
   font-size: 1.5em;
 }
 main .winner .content .money {
-  font-size: 2em;
+  font-size: 1.5em;
+  width: 80%;
+  margin: auto;
 }
 main .wanted {
   display: block;
@@ -497,7 +532,7 @@ main .wanted {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  margin: 0 auto 20px auto;
+  margin: 5px auto 20px auto;
 }
 main .wanted input {
   -webkit-box-shadow: 0 1px 2px #aaa;
@@ -506,8 +541,40 @@ main .wanted input {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
-  padding: 10px;
+  padding: 15px;
+  font-size: 1em;
   width: 100%;
+  -webkit-transition: border 500ms ease;
+  -moz-transition: border 500ms ease;
+  -o-transition: border 500ms ease;
+  -ms-transition: border 500ms ease;
+  transition: border 500ms ease;
+  outline: none;
+  border-bottom: 1px solid #fff;
+}
+main .wanted input:focus,
+main .wanted input:hover {
+  border-bottom: 1px solid #999;
+}
+main .about {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  padding: 20px;
+  -webkit-box-shadow: 0 1px 2px #aaa;
+  box-shadow: 0 1px 2px #aaa;
+  background: #fff;
+  color: #666;
+}
+main .about p {
+  margin: 0px auto 15px auto;
+  font-size: 1em;
+  line-height: 1.2em;
+  text-align: justify;
+}
+main .about p span {
+  color: #ef3635;
+  font-weight: 700;
 }
 footer {
   text-align: center;

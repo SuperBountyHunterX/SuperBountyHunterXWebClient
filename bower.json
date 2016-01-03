@@ -24,6 +24,7 @@
   ],
   "devDependencies": {
     "jquery": "~2.1.4",
-    "html5shiv": "~3.7.3"
+    "html5shiv": "~3.7.3",
+    "particles.js": "~2.0.0"
   }
 }
