@@ -107,6 +107,11 @@ gulp.task('files', function() {
     .pipe(gulp.dest('./public/'));
 });
 
+gulp.task('video', function() {
+    gulp.src('./src/video/**.*')
+    .pipe(gulp.dest('./public/video'));
+});
+
 gulp.task('connect', function() {
     connect.server({
         root: 'public',
@@ -114,12 +119,13 @@ gulp.task('connect', function() {
     });
 });
 
-gulp.task('init', ['css', 'bower', 'js', 'img', 'html', 'files']);
+gulp.task('init', ['css', 'bower', 'js', 'img', 'html', 'files', 'video']);
 
-gulp.task('watch', ['css', 'js', 'img', 'html', 'files', 'connect'], function() {
+gulp.task('watch', ['css', 'js', 'img', 'html', 'files', 'connect', 'video'], function() {
     gulp.watch('src/css/**/*.styl', ['css']);
     gulp.watch('src/js/**/*.js', ['js']);
     gulp.watch('src/img/**/*', ['img']);
     gulp.watch('src/*.html', ['html']);
+    gulp.watch('src/video/**/*', ['video']);
     gulp.watch(['./src/**.*', '!./src/**.*.html', '!./src/**.*js', '!./src/img/'], ['files']);
 });

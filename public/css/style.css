@@ -566,6 +566,13 @@ main .about {
   background: #fff;
   color: #666;
 }
+main .about video {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  margin: auto;
+  display: block;
+}
 main .about p {
   margin: 0px auto 15px auto;
   font-size: 1em;
