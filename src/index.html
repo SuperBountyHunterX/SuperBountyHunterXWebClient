@@ -97,15 +97,15 @@
             <img class="center" src="img/SvG-Loaders/puff.svg" alt="">
         </div>
         <main>
-            <form class="wanted" action="#">
-                <input type="text" name="name" placeholder="SEARCH">
-            </form>
+            <div class="wanted">
+                <input id="search" type="text" name="name" placeholder="SEARCH">
+            </div>
             <article class="winner hunter flag">
-                <img src="img/bounty1.svg" alt="">
+                <img id="winnerImg" src="img/bounty1.svg" alt="">
                 <div class="content">
                     <img class="cup" src="img/Cup.svg" alt="1">
-                    <h2>Mega Hombre</h2>
-                    <p class="money">$9999</p>
+                    <h2 id="winnerName">Mega Hombre</h2>
+                    <p id="winnerMoney" class="money">$9999</p>
                 </div>
             </article>
             <section class="hunters">
@@ -153,7 +153,8 @@
         </main>
 
         <footer><a href="http://arlefreak.com/">arlefreak.com</a></footer>
-
+        
+        <script src="lib/js/jquery.js"></script>
         <script src="js/script.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->

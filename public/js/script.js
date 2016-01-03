@@ -42,3 +42,31 @@ function handleLocationError(browserHasGeolocation, infoWindow, pos) {
                         'Error: The Geolocation service failed.' :
                           'Error: Your browser doesn\'t support geolocation.');
 }
+
+var $ = window.$;
+var WINNER = '';
+
+function HandleData( data ) {
+  console.table(data);
+  var rnmb = Math.floor((Math.random() * 1000) + 1);
+  document.getElementById("winnerImg").src = "http://api.superbountyhunterx.com/" + data.avatar_url;
+  document.getElementById("winnerName").innerHTML = WINNER;
+  document.getElementById("winnerMoney").innerHTML = rnmb;
+}
+
+$("input").on("keydown",function search(e) {
+  if(e.keyCode === 13) {
+    var v = $(this).val();
+    WINNER = v;
+    var url = 'http://104.131.78.147/api/avatars';
+    var data = { "nickname": v};
+    $.ajax({
+      type: "POST",
+      url: url,
+      data: data,
+      success: HandleData
+      // dataType: dataType
+    });
+  }
+});
+
