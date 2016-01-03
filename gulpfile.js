@@ -29,8 +29,9 @@ var DEBUG = process.env.NODE_ENV === 'production' ? false : true;
 // grab libraries files from bower_components, minify and push in /public
 gulp.task('bower', function() {
     var jsFilter = gulpFilter('**/*.js', {restore: true});
-    var cssFilter = gulpFilter('*.css', {restore: true});
-    var fontFilter = gulpFilter(['*.eot', '*.woff', '*.svg', '*.ttf']);
+    var cssFilter = gulpFilter('**/*.css', {restore: true});
+    var fontFilter = gulpFilter(['**/*.eot', '**/*.woff', '**/*.svg', '**/*.ttf'], {restore: true});
+    var imgFilter  = gulpFilter(['**/*.svg', '**/*.png', '**/*.jpg', '**/*.jpeg']);
     var dest_path =  'public/lib';
 
     return gulp.src(bower({debugging: true, includeDev: true}))
@@ -59,7 +60,11 @@ gulp.task('bower', function() {
     // grab vendor font files from bower_components and push in /public
     .pipe(fontFilter)
     .pipe(flatten())
-    .pipe(gulp.dest(dest_path + '/fonts'));
+    .pipe(gulp.dest(dest_path + '/fonts'))
+    .pipe(fontFilter.restore)
+
+    .pipe(imgFilter)
+    .pipe(gulp.dest(dest_path + '/img'));
 });
 
 gulp.task('js', function() {
