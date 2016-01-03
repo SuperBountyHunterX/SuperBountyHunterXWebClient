@@ -26,6 +26,7 @@
   "dependencies": {
     "body-parser": "^1.14.1",
     "errorhandler": "^1.4.2",
+    "method-override": "^2.3.5",
     "express": "^4.13.3"
   },
   "devDependencies": {
@@ -49,7 +50,6 @@
     "jshint": "^2.9.1-rc2",
     "jshint-stylish": "^2.1.0",
     "main-bower-files": "^2.9.0",
-    "method-override": "^2.3.5",
     "nib": "^1.1.0",
     "vinyl-buffer": "^1.0.0",
     "vinyl-source-stream": "^1.1.0"
