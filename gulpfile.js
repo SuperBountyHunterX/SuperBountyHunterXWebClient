@@ -116,9 +116,10 @@ gulp.task('connect', function() {
 
 gulp.task('init', ['css', 'bower', 'js', 'img', 'html', 'files']);
 
-gulp.task('watch', ['css', 'js', 'img', 'html', 'connect'], function() {
+gulp.task('watch', ['css', 'js', 'img', 'html', 'files', 'connect'], function() {
     gulp.watch('src/css/**/*.styl', ['css']);
     gulp.watch('src/js/**/*.js', ['js']);
     gulp.watch('src/img/**/*', ['img']);
     gulp.watch('src/*.html', ['html']);
+    gulp.watch(['./src/**.*', '!./src/**.*.html', '!./src/**.*js', '!./src/img/'], ['files']);
 });
