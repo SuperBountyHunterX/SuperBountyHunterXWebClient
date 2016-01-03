@@ -49,11 +49,14 @@ var WINNER = '';
 function HandleData( data ) {
   console.table(data);
   var rnmb = Math.floor((Math.random() * 1000) + 1);
+  var imgUrl = "http://api.superbountyhunterx.com/" + data.avatar_url;
+
   $("#winner").removeClass('hidden');
   $("#loader").addClass('hidden');
-  document.getElementById("winnerImg").src = "http://api.superbountyhunterx.com/" + data.avatar_url;
+  document.getElementById("winnerImg").src = imgUrl;
   document.getElementById("winnerName").innerHTML = WINNER;
   document.getElementById("winnerMoney").innerHTML = rnmb;
+  document.getElementById("twitterShare").href = " https://twitter.com/intent/tweet?url=http%3A%2F%2Fsuperbountyhunterx.com%2Findex.html&via=arlefreak&text=Check%20out%20Super%20Bounty%20Hunter%20" + imgUrl + " &hashtags=sbhx&";
 }
 
 $("input").on("keydown",function search(e) {
