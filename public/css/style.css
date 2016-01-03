@@ -441,6 +441,12 @@ main .hunter p {
   -ms-hyphens: auto;
   hyphens: auto;
 }
+main .hunter img {
+  display: block;
+  margin: 10px auto 10px auto;
+  width: 100%;
+  height: auto;
+}
 main .hunter .content {
   display: block;
   background: #333;
@@ -504,7 +510,7 @@ main .winner .content {
   background: #ef3635;
 }
 main .winner .content h2 {
-  font-size: 2em;
+  font-size: 1.5em;
   width: 80%;
   margin: auto auto 5% auto;
 }
